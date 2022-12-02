@@ -5,7 +5,6 @@
         public int Id { get; set; }
         public string? ProjectName { get; set; }
         public double ProjectFundProgress { get; set; }
-
-        //public string Description { get; set; } Mazi me img video klp klp ????
+        public string? Description { get; set; } 
     }
 }
