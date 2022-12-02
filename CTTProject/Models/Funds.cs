@@ -2,8 +2,9 @@
 {
     public class Funds
     {
-        public double Fund { get; set; } //sunoliko poso
-        public string? FundBacker { get; set; }//autos pou bazei lefta
-        
+        public int Id { get; set; }
+        public double Amount { get; set; } //sunoliko poso
+        public Backer? FundBacker { get; set; }//autos pou bazei lefta
+        public Project? Project { get; set; }
     }
 }

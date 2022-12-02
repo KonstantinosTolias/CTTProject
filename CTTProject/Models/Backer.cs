@@ -8,8 +8,7 @@ namespace CTTProject.Models
         public string? UserName { get; set; }
         public string? Email { get; set; }
         public double? FundsAdded { get; set; }
-
-        List<int> ProjectList = new List<int>();
+        public List<Funds> FundList { get; set; } = new List<Funds>();
          
 
     }
