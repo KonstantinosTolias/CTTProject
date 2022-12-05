@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CTTProject.Migrations
 {
     [DbContext(typeof(ProjectDb))]
-    [Migration("20221202183848_CTTProject")]
+    [Migration("20221204201606_CTTProject")]
     partial class CTTProject
     {
         /// <inheritdoc />

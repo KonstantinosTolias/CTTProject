@@ -1,7 +1,17 @@
+using CTTProject.Migrations;
+using CTTProject.Service;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<ICRUD, CRUD>();//I added that
+builder.Services.AddDbContext<ProjectDb>();//I added that
+
+
+//builder.Services.AddDbContext<ProjectDb>(options => options.UseSqlServer());
+
 
 var app = builder.Build();
 

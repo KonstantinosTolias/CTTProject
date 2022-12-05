@@ -12,7 +12,7 @@ namespace CTTProject.Migrations
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string connectionString = "Data Source=(local);Initial Catalog=Eshop-Regen-2022;Integrated Security = true;TrustServerCertificate=True;";
+            string connectionString = "Data Source=(local);Initial Catalog=Project_Cloud;Integrated Security = true;TrustServerCertificate=True;";
             optionsBuilder.UseSqlServer(connectionString);
         }
     }
