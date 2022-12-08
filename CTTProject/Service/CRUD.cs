@@ -18,11 +18,21 @@ namespace CTTProject.Service
         {
             return await _context.Projects.ToListAsync();
         }
+        /*
         public async Task<Project> ReadAsync(int? ProjectId) =>
             await _context
                  .Projects
                  .Include(Project => Project.Id)
                  .FirstAsync(p => p.Id == ProjectId);
+        */
+
+        public async Task<Project> ReadByIdAsync(int? projectId)
+        {
+            return await _context
+                .Projects
+                .Where(project => project.Id == projectId)
+                .FirstAsync();
+        }
 
         public async Task CreateProjectAsync(Project project)
         {
@@ -41,7 +51,7 @@ namespace CTTProject.Service
         }
         public async Task DeleteAsync(int id)
         {
-            var project = await ReadAsync(id);
+            var project = await ReadByIdAsync(id);
             if (project != null)
             {
                 _context.Projects.Remove(project);
@@ -61,13 +71,7 @@ namespace CTTProject.Service
             return _context.Projects == null;
         }
 
-        public async Task<List<Project>> ReadByIdAsync(int? projectId)
-        {
-            return await _context
-                .Projects
-                .Where(project => project.Id == projectId)
-                .ToListAsync();
-        }
+       
 
     }
 }
