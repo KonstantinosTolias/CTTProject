@@ -18,13 +18,7 @@ namespace CTTProject.Service
         {
             return await _context.Projects.ToListAsync();
         }
-        /*
-        public async Task<Project> ReadAsync(int? ProjectId) =>
-            await _context
-                 .Projects
-                 .Include(Project => Project.Id)
-                 .FirstAsync(p => p.Id == ProjectId);
-        */
+        
 
         public async Task<Project> ReadByIdAsync(int? projectId)
         {
@@ -71,7 +65,20 @@ namespace CTTProject.Service
             return _context.Projects == null;
         }
 
-       
+        /*
+        public async Task<List<Funds>> GetAllFundsAsync()
+        {
+            return await _context.Funds.ToListAsync();
+        }
 
+        public async Task<Funds> FundsByIdAsync(double projectAmount)
+        {
+            return await _context
+                .Funds
+                .Where(funds => funds.Amount == projectAmount)
+                .FirstAsync();
+        } 
+        */
     }
 }
+        

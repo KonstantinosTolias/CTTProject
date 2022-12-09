@@ -15,5 +15,8 @@ namespace CTTProject.Service
 
         public bool ProjectExist();
         public bool ProjectExists(int Id);
+
+        //public Task<List<Funds>> GetAllFundsAsync();
+       // public Task AddFundsByIdAsync(double? projectAmount);
     }
 }

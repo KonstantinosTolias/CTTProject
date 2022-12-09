@@ -7,10 +7,13 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<ICRUD, CRUD>();//I added that
-builder.Services.AddDbContext<ProjectDb>();//I added that
+//builder.Services.AddDbContext<ProjectDb>();//I added that
 
 
-//builder.Services.AddDbContext<ProjectDb>(options => options.UseSqlServer());
+builder.Services.AddDbContext<ProjectDb>(options => 
+options.UseSqlServer(builder.Configuration.GetConnectionString("AzureConnString")));
+
+
 
 
 var app = builder.Build();
