@@ -16,8 +16,12 @@ namespace CTTProject.Migrations
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            string connectionString = "Data Source = (local); Initial Catalog = Project_Cloud; Integrated Security = true; TrustServerCertificate = True;";
+            optionsBuilder.UseSqlServer(connectionString);
+            /* For Azure
             string connectionString = "Server=tcp:team-7.database.windows.net,1433;Initial Catalog=Project_Cloud;Persist Security Info=False;User ID=Team7;Password=123456!a;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
             optionsBuilder.UseSqlServer(connectionString);
+            */
         }
     }
 
