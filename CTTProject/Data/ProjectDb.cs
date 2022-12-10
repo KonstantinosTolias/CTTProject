@@ -1,4 +1,4 @@
-﻿using CTTProject.Models;
+using CTTProject.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace CTTProject.Migrations
@@ -13,7 +13,16 @@ namespace CTTProject.Migrations
         public DbSet<Creator> Creators { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<Funds> Funds { get; set; }
-
+        
+        
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            Data Source=(local);Initial Catalog=Project_Cloud;Integrated Security = true;TrustServerCertificate=True;
+            optionsBuilder.UseSqlServer(connectionString);
+        }
+        
+        
+/* For Azure
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             string connectionString = "Data Source = (local); Initial Catalog = Project_Cloud; Integrated Security = true; TrustServerCertificate = True;";
@@ -23,6 +32,7 @@ namespace CTTProject.Migrations
             optionsBuilder.UseSqlServer(connectionString);
             */
         }
+*/
     }
 
 }
